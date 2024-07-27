@@ -24,7 +24,7 @@ class VideoLoader:
     def __init__(self,path:str,restrict_frames:Optional[int]) -> None:
         self.path = path
         self._video = cv2.VideoCapture(path)
-        self.restrict_frames=restrict_frames
+        self.restrict_frames= restrict_frames if restrict_frames else float('inf')
   
     def metadata(self):
         return VideoMetadata(int(self._video.get(cv2.CAP_PROP_FRAME_COUNT)),int(self._video.get(cv2.CAP_PROP_FPS)),int(self._video.get(cv2.CAP_PROP_FRAME_WIDTH)),int(self._video.get(cv2.CAP_PROP_FRAME_HEIGHT)))
