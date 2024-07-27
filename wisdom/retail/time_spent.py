@@ -60,8 +60,8 @@ class TimeSpent:
                     if areas is not None:
                         if areas[1][2]/areas[1][0]>self.treshold:
                             drawer.rectangle(areas[2][2].tolist(),fill=color)
-                            drawer.rectangle(areas[2][0].tolist())
-                            drawer.rectangle(areas[2][1].tolist())
+                            drawer.rectangle(areas[2][0].tolist(),outline="red")
+                            drawer.rectangle(areas[2][1].tolist(),outline="blue")
                             humans_list.append(human_id)
                             frames.append(index)
             rev_frames.append((humans_list,numpy.asarray(img)))
