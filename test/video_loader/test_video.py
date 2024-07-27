@@ -17,10 +17,10 @@ def test_video_iterator():
     assert sum(1 for _ in frames)==1283
 
 def test_video_timespent():
-    v=VideoLoader(video_path)
+    v=VideoLoader(video_path,100)
     model = YOLO("yolov8n.pt")
     ts = TimeSpent(model)
     bbox1 = BBBox(np.array([[27,51,141,113]]),"billing_counter")
     track_ids = ts.time_spent(v,[bbox1])
-    assert track_ids
+    assert len(track_ids)==2
     
