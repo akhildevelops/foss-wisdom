@@ -59,7 +59,9 @@ class TimeSpent:
                     areas = common_area(ref_box.box,box.xyxy)
                     if areas is not None:
                         if areas[1][2]/areas[1][0]>self.treshold:
-                            drawer.rectangle(areas[2][2].tolist())
+                            drawer.rectangle(areas[2][2].tolist(),fill=(153,0,153,5))
+                            drawer.rectangle(areas[2][0].tolist())
+                            drawer.rectangle(areas[2][1].tolist())
                             humans_list.append(human_id)
                             frames.append(index)
             rev_frames.append((humans_list,numpy.asarray(img)))

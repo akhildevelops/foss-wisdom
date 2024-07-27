@@ -24,3 +24,6 @@ def test_video_timespent():
     track_ids = ts.time_spent(v,[bbox1])
     assert len(track_ids)==2
     
+def test_raw_video():
+    model = YOLO("yolov8n.pt")
+    model.track(video_path,stream=True,show=True)
