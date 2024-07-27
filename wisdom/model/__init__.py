@@ -7,5 +7,6 @@ class Model:
     @classmethod
     def default(cls):
         return cls(YOLO("yolov8l.pt"))
+    
     def __call__(self, *args: Any, **kwds: Any) -> Any:
         return self.model(*args,**kwds)
