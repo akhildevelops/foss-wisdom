@@ -39,7 +39,7 @@ class TimeSpent:
         return cls(yolo)
     
     def time_spent(self,video:VideoLoader,bounding_box:List[BBBox]):
-        track_ids:Dict[BBBox,Dict[int,List[int]]]={}
+        track_ids:Dict[BBBox,Dict[int,Tuple[List[int],Tuple]]]={}
         rev_frames:List[List]=[]
         iterator = video.frame_iterator()
         for index,frame in enumerate(iterator):
@@ -55,11 +55,11 @@ class TimeSpent:
                     if not box.id:
                         continue
                     human_id=box.id.int().item()
-                    frames = humans.setdefault(human_id,list())
+                    frames,color = humans.setdefault(human_id,(list(),tuple(numpy.random.choice(range(256), size=3))))
                     areas = common_area(ref_box.box,box.xyxy)
                     if areas is not None:
                         if areas[1][2]/areas[1][0]>self.treshold:
-                            drawer.rectangle(areas[2][2].tolist(),fill=(153,0,153,5))
+                            drawer.rectangle(areas[2][2].tolist(),fill=color)
                             drawer.rectangle(areas[2][0].tolist())
                             drawer.rectangle(areas[2][1].tolist())
                             humans_list.append(human_id)
