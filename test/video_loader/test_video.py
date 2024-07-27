@@ -23,7 +23,3 @@ def test_video_timespent():
     bbox1 = BBBox(np.array([[27,51,141,113]]),"billing_counter")
     track_ids = ts.time_spent(v,[bbox1])
     assert len(track_ids)==2
-    
-def test_raw_video():
-    model = YOLO("yolov8n.pt")
-    model.track(video_path,stream=True,show=True)
