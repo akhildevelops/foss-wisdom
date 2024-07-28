@@ -1,8 +1,14 @@
-# Wisdom
-## Wisdom is a retail video intelligence platform
-![average-time-spent](https://github.com/user-attachments/assets/ef6c97a5-5988-41e0-bb74-2d3c2787b494)
+# Wisdom (Video Intelligence Platform for Retail)
+
+https://github.com/user-attachments/assets/22cfc185-9304-422b-adec-ca01560ddb56
+
+**Wisdom analysing instore CCTV Footage to identify and calculate average time spent by customers near billing counter.**
+---
 
 ![average-time-spent](./artifacts/average-time-spent.png)
+**Average Time Spent (in secs) by customers at the billing counter as the video progresses**
+---
+
 
 Wisdom helps retail chains like DMART, Reliance Stores etc..,. to optimize their operations. One of the challenging problem is average customer time spent at billing counters. 
 
@@ -40,3 +46,9 @@ Wisdom solves this problem by analysing CCTV Feed in real time and produces live
 - Average time at each instance of the video is computed and plotted in a graph.
 - Finally a video is generated with all the annotated frames by running on multiple threads.
 - Look into [main.py](./main.py) for the whole flow
+
+## Improvements and Scope
+- Wisdom uses lightweight model (yolov8n) for running inferences on each video frame for speed, use of medium(yolom), large(yolol) can be explored for more accuracy but suffers in speed.
+- A UI / Mobileapp can be integrated to wisdom to receive analysis and alerts on the ground.
+- Similar reports can be generated for avg time spent by each customer near the shelfs.
+
