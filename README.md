@@ -52,3 +52,5 @@ Wisdom solves this problem by analysing CCTV Feed in real time and produces live
 - A UI / Mobileapp can be integrated to wisdom to receive analysis and alerts on the ground.
 - Similar reports can be generated for avg time spent by each customer near the shelfs.
 
+## Contribution
+Refer to [contribution.md](./Contribution.md) for setup steps.
