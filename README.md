@@ -1,7 +1,6 @@
 # Wisdom
 ## Wisdom is a retail video intelligence platform
-
-![Wisdom identifying customers and billing counter with their intersection region](./artifacts/video.mp4)
+![average-time-spent](https://github.com/user-attachments/assets/ef6c97a5-5988-41e0-bb74-2d3c2787b494)
 
 ![average-time-spent](./artifacts/average-time-spent.png)
 
